@@ -12,16 +12,16 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import br.com.aprendaSeleniumComThiago.core.CoreBaseTest;
 import br.com.aprendaSeleniumComThiago.core.CoreDriver;
-import br.com.aprendaSeleniumComThiago.page.RegisterPage;
-import br.com.aprendaSeleniumComThiago.page.RegisterSuccessPage;
+import br.com.aprendaSeleniumComThiago.page.Register;
+import br.com.aprendaSeleniumComThiago.page.RegisterSuccess;
 
-public class ChallengeRegister extends CoreBaseTest{
+public class ChallengeSelect extends CoreBaseTest{
 	
 	@Test
 	public void dragTest() {
-		RegisterPage registerPage = new RegisterPage();
-		RegisterSuccessPage registerSuccessPage = new RegisterSuccessPage();
-		driver.navigate().to(RegisterPage.URL);
+		Register registerPage = new Register();
+		RegisterSuccess registerSuccessPage = new RegisterSuccess();
+		driver.navigate().to(Register.URL);
 		
 		registerPage.fillContactInfoFields(
 				"Spongebob", 
@@ -46,7 +46,7 @@ public class ChallengeRegister extends CoreBaseTest{
 		
 		registerPage.submit();
 		
-		registerSuccessPage.validatePage(driver.getCurrentUrl());
+		registerSuccessPage.validatePage();
 		
 	}
 	

@@ -11,11 +11,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import br.com.aprendaSeleniumComThiago.core.CoreDriver;
 
 
-public class RegisterPage{
+public class Register{
 
 	public static String URL = "http://demo.guru99.com/test/newtours/register.php";
 	protected WebDriver driver;
-	public RegisterPage() {
+	public Register() {
 		this.driver = CoreDriver.getDriver();
 		PageFactory.initElements(CoreDriver.getDriver(), this);
 	}

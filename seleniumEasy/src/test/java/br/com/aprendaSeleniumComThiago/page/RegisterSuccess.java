@@ -13,20 +13,19 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import br.com.aprendaSeleniumComThiago.core.CoreDriver;
 
 
-public class RegisterSuccessPage{
+public class RegisterSuccess{
 
 	public static String URL = "http://demo.guru99.com/test/newtours/register_sucess.php";
 	protected WebDriver driver;
-	public RegisterSuccessPage() {
+	public RegisterSuccess() {
 		this.driver = CoreDriver.getDriver();
 		PageFactory.initElements(CoreDriver.getDriver(), this);
 	}
 	
 	
 	// WAIT FOR ELEMENT
-	public void validatePage(String currentUrl) {
-//		WebDriverWait driverWait = new WebDriverWait(this.driver, 30);
-//		driverWait.until(ExpectedConditions.urlMatches(regex));
+	public void validatePage() {
+		String currentUrl = driver.getCurrentUrl();
 		assertEquals(URL, currentUrl);
 	}
 }

@@ -1,6 +1,8 @@
 files/
 challenges/
 questions.txt
-seleniumEasy/src/test/resources/driver/linux/*
-seleniumEasy/src/test/resources/driver/windows/*
+seleniumEasy/target/
+seleniumEasy/resultadoTest/
+# seleniumEasy/src/test/resources/driver/linux/*
+# seleniumEasy/src/test/resources/driver/windows/*
 /.metadata/

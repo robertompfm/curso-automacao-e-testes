@@ -14,22 +14,9 @@ import br.com.aprendaSeleniumComThiago.page.PageLogin;
 
 public class ChallengeLogin extends CoreBaseTest{
 	
-	@Test
-	public void loginTest() {
-		WebDriverWait driverWait = new WebDriverWait(CoreDriver.getDriver(), 30);
-		
-		driver.navigate().to("http://demo.guru99.com/test/login.html");
-		driver.findElement(By.id("email")).sendKeys("roberto@mendes.com");
-		driver.findElement(By.id("passwd")).sendKeys("012345");
-		driver.findElement(By.id("SubmitLogin")).submit();
-		String xPath = "/html/body/div[2]/div/div/h3";
-		driverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xPath)));
-		WebElement element = driver.findElement(By.xpath(xPath));
-		assertEquals("Test failed", "Successfully Logged in...", element.getText());
-	}
 	
 	@Test
-	public void loginTest2() {
+	public void loginTest() {
 		WebDriverWait driverWait = new WebDriverWait(CoreDriver.getDriver(), 30);
 		PageLogin loginPage = new PageLogin();
 		

@@ -13,8 +13,10 @@ import br.com.aprendaSeleniumComThiago.core.CoreDriver;
 public class PageHomeSeleniumEasy{
 
 	protected WebDriver driver;
+	protected WebDriverWait driverWait;
 	public PageHomeSeleniumEasy() {
 		this.driver = CoreDriver.getDriver();
+		driverWait = new WebDriverWait(this.driver, 30);
 		PageFactory.initElements(CoreDriver.getDriver(), this);
 	}
 
@@ -33,7 +35,6 @@ public class PageHomeSeleniumEasy{
 	
 	public void acessarTestSelenium(String text) {
 		inicioteste.click();
-		WebDriverWait driverWait = new WebDriverWait(CoreDriver.getDriver(), 30);
 		driverWait.until(ExpectedConditions.visibilityOf(linkSimpleFormDemo));
 		Assert.assertEquals(text, labelHeadBasicTest.getText());
 		linkSimpleFormDemo.click();

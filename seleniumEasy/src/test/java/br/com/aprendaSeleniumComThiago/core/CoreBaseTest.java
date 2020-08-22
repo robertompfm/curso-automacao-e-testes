@@ -28,13 +28,14 @@ public abstract class CoreBaseTest {
 	 * metodo executado antes de cada caso de teste
 	 */
 	@After
-	public void after(){
-		if(driver != null){
-//			driver.close();
-			driver.quit();
-		}
-		driver = null;
-	}
+	    public void after(){
+	        if(driver != null){
+	            CoreDriver.resetDriver();
+	        }
+	        driver = null;
+	    }
+	    
+	
 	
 	
 	/*

@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import br.com.aprendaSeleniumComThiago.core.CoreBaseTest;
 import br.com.aprendaSeleniumComThiago.core.CoreDriver;
+import br.com.aprendaSeleniumComThiago.page.PageLogin;
 
 public class ChallengeLogin extends CoreBaseTest{
 	
@@ -25,6 +26,21 @@ public class ChallengeLogin extends CoreBaseTest{
 		driverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xPath)));
 		WebElement element = driver.findElement(By.xpath(xPath));
 		assertEquals("Test failed", "Successfully Logged in...", element.getText());
+	}
+	
+	@Test
+	public void loginTest2() {
+		WebDriverWait driverWait = new WebDriverWait(CoreDriver.getDriver(), 30);
+		PageLogin loginPage = new PageLogin();
+		
+		loginPage.navigateToPage();
+		
+		String successMsg = loginPage.makeLogin(
+				"spongebob@krustykrabby.com", 
+				"krabbypatty"
+				).getSuccessMessage();
+		
+		assertEquals("Test failed", "Successfully Logged in...", successMsg);
 	}
 	
 }

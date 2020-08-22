@@ -85,13 +85,14 @@ public class CoreDriver {
 		return driver;
 	}
 	
-	/*public static void resetDriver() {
-		if(driver != null){
-			driver.close();
-		}
-		driver = null;
-	}*/
 	
+	public static void resetDriver() {
+        if(driver != null){
+            driver.close();
+        }
+        driver=null;
+    }
+
 	/**
 	 * 
 	 * @return sistema Operacional Windows

@@ -19,7 +19,7 @@ import br.com.aprendaSeleniumComThiago.page.RegisterSuccess;
 public class ChallengeAlert extends CoreBaseTest{
 	
 	@Test
-	public void dragTest() {
+	public void alertTest() {
 		DeleteCustomer deleteCustomerPage = new DeleteCustomer();
 		driver.navigate().to(DeleteCustomer.URL);
 		
